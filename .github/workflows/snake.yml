@@ -1,4 +1,4 @@
-name: Generate Snake
+name: Build profile assets
 
 on:
   schedule:
@@ -9,19 +9,58 @@ on:
       - main
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - name: Generate snake svg
         uses: Platane/snk@v3
-        id: snake-gif
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
+
+      - name: Checkout current output branch
+        uses: actions/checkout@v4
+        with:
+          ref: output
+          path: previous
+        continue-on-error: true
+
+      # Public instances of github-readme-stats / trophy go down often (503/402).
+      # Fetch them here and commit the SVGs, so the profile never shows a broken image.
+      - name: Fetch and cache stat cards
+        env:
+          USER: ${{ github.repository_owner }}
+          GRS: https://github-readme-stats-salesp07.vercel.app
+        run: |
+          set -u
+          fetch() {
+            name="$1"; url="$2"
+            if curl -sfL --max-time 45 "$url" -o "tmp.svg" \
+               && [ "$(stat -c%s tmp.svg)" -gt 1000 ] \
+               && head -c 2000 tmp.svg | grep -q '<svg'; then
+              mv tmp.svg "dist/$name"
+              echo "ok      $name"
+            elif [ -f "previous/$name" ]; then
+              cp "previous/$name" "dist/$name"
+              echo "stale   $name (upstream failed, kept last good copy)"
+            else
+              echo "MISSING $name"
+            fi
+            rm -f tmp.svg
+          }
+          T="theme=tokyonight&hide_border=true&bg_color=0f2027&title_color=64ffda"
+          fetch stats.svg      "$GRS/api?username=$USER&show_icons=true&count_private=true&include_all_commits=true&icon_color=64ffda&$T"
+          fetch top-langs.svg  "$GRS/api/top-langs/?username=$USER&layout=compact&langs_count=8&$T"
+          fetch streak.svg     "https://streak-stats.demolab.com/?user=$USER&theme=tokyonight&hide_border=true&background=0f2027&ring=64ffda&fire=64ffda&currStreakLabel=64ffda"
+          fetch trophies.svg   "https://github-trophies.vercel.app/?username=$USER&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8"
+          for repo in valuation-dcf-b3 ImperadorBarberShop llm-pr-reviewer-agent php-agent-manager; do
+            fetch "pin-$repo.svg" "$GRS/api/pin/?username=$USER&repo=$repo&$T"
+          done
+          ls -la dist
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4

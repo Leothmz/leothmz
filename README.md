@@ -41,16 +41,16 @@
 <div align="center">
 
 <a href="https://github.com/Leothmz/valuation-dcf-b3">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=Leothmz&repo=valuation-dcf-b3&theme=tokyonight&hide_border=true&bg_color=0f2027" alt="valuation-dcf-b3" />
+  <img width="49%" src="https://raw.githubusercontent.com/Leothmz/leothmz/output/pin-valuation-dcf-b3.svg" alt="valuation-dcf-b3" />
 </a>
 <a href="https://github.com/Leothmz/ImperadorBarberShop">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=Leothmz&repo=ImperadorBarberShop&theme=tokyonight&hide_border=true&bg_color=0f2027" alt="ImperadorBarberShop" />
+  <img width="49%" src="https://raw.githubusercontent.com/Leothmz/leothmz/output/pin-ImperadorBarberShop.svg" alt="ImperadorBarberShop" />
 </a>
 <a href="https://github.com/Leothmz/llm-pr-reviewer-agent">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=Leothmz&repo=llm-pr-reviewer-agent&theme=tokyonight&hide_border=true&bg_color=0f2027" alt="llm-pr-reviewer-agent" />
+  <img width="49%" src="https://raw.githubusercontent.com/Leothmz/leothmz/output/pin-llm-pr-reviewer-agent.svg" alt="llm-pr-reviewer-agent" />
 </a>
 <a href="https://github.com/Leothmz/php-agent-manager">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=Leothmz&repo=php-agent-manager&theme=tokyonight&hide_border=true&bg_color=0f2027" alt="php-agent-manager" />
+  <img width="49%" src="https://raw.githubusercontent.com/Leothmz/leothmz/output/pin-php-agent-manager.svg" alt="php-agent-manager" />
 </a>
 
 </div>
@@ -69,16 +69,16 @@
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=Leothmz&show_icons=true&count_private=true&include_all_commits=true&theme=tokyonight&hide_border=true&bg_color=0f2027&title_color=64ffda&icon_color=64ffda" alt="stats" />
-<img width="41%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Leothmz&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0f2027&title_color=64ffda" alt="top langs" />
+<img width="49%" src="https://raw.githubusercontent.com/Leothmz/leothmz/output/stats.svg" alt="stats" />
+<img width="41%" src="https://raw.githubusercontent.com/Leothmz/leothmz/output/top-langs.svg" alt="top langs" />
 
 <br /><br />
 
-<img width="90%" src="https://github-readme-streak-stats.herokuapp.com/?user=Leothmz&theme=tokyonight&hide_border=true&background=0f2027&ring=64ffda&fire=64ffda&currStreakLabel=64ffda" alt="streak" />
+<img width="90%" src="https://raw.githubusercontent.com/Leothmz/leothmz/output/streak.svg" alt="streak" />
 
 <br /><br />
 
-<img width="90%" src="https://github-profile-trophy.vercel.app/?username=Leothmz&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8" alt="trophies" />
+<img width="90%" src="https://raw.githubusercontent.com/Leothmz/leothmz/output/trophies.svg" alt="trophies" />
 
 </div>
 
@@ -94,9 +94,6 @@
   <img alt="snake animation" src="https://raw.githubusercontent.com/Leothmz/leothmz/output/github-snake.svg" />
 </picture>
 
-<br /><br />
-
-<img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=Leothmz&theme=tokyo-night&hide_border=true&bg_color=0f2027&color=64ffda&line=64ffda&point=ffffff&area=true" alt="activity graph" />
 
 </div>
 
