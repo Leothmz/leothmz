@@ -37,6 +37,8 @@ jobs:
           GRS: https://github-readme-stats-salesp07.vercel.app
         run: |
           set -u
+          # dist/ is created by the snk docker action as root
+          sudo chown -R "$(id -u):$(id -g)" dist
           fetch() {
             name="$1"; url="$2"
             if curl -sfL --max-time 45 "$url" -o "tmp.svg" \
